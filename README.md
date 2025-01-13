@@ -1,11 +1,20 @@
 # Seoul Temprature Prediction Documentation
 
 ![GitHub License](https://img.shields.io/github/license/Sambonic/seoul-temprature-prediction)
+
+![GitHub Release](https://img.shields.io/github/v/release/Sambonic/seoul-temprature-prediction)
+
+![GitHub Issues](https://img.shields.io/github/issues/Sambonic/seoul-temprature-prediction)
+
+![GitHub Top Language](https://img.shields.io/github/languages/top/Sambonic/seoul-temprature-prediction)
+
+![Project Status](https://img.shields.io/badge/status-active-brightgreen)
+
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)
 
-This project uses machine learning to predict next-day minimum air temperatures.
+This project uses machine learning to predict minimum air temperatures.
 
-#### Last Updated: January 5th, 2025
+#### Last Updated: January 13th, 2025
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -58,28 +67,19 @@ python -m venv env
 
 <a name="usage"></a>
 ## Usage
-1.  **Run the notebook:** Execute all cells in `air_temprature_prediction_ml.ipynb`. This will load the dataset, perform exploratory data analysis (EDA), handle missing values, and train several machine learning models to predict the next day's minimum temperature.
+1. **Run the notebook:** Execute all cells in `air_temprature_prediction_ml.ipynb`. This performs data loading, cleaning, exploration, model training, and evaluation.
 
-2.  **Observe EDA results:** The notebook generates various visualizations (histograms, box plots, scatter plots, heatmaps) and descriptive statistics.  These aid in understanding the dataset's characteristics and identifying potential issues like missing data or outliers.
-
-3.  **Examine data preprocessing:** The code shows how missing values are imputed using median and mean imputation strategies. Outlier treatment is also demonstrated via z-score and IQR methods.
-
-4.  **Evaluate model performance:** Multiple regression models (Random Forest, Linear Regression, LightGBM) are trained and evaluated using metrics like RMSE, MAE, and R². The notebook displays the performance of each model with and without feature selection and hyperparameter tuning.
-
-5.  **Analyze learning curves:** Learning curves are plotted for each model, illustrating the trade-off between model complexity and generalization ability.
-
-6.  **Compare model performance:**  The notebook provides bar charts comparing the performance of different models across various metrics, facilitating the selection of the best-performing model for the prediction task.  A legend is provided to decipher the model names.
+2. **Interpret results:** Observe generated visualizations (histograms, scatter plots, heatmaps, learning curves, and bar charts) to understand data distributions, relationships between features, model performance, and the impact of feature selection and hyperparameter tuning.  Review printed metrics (RMSE, MAE, R²) for each model to compare performance. The notebook provides a legend to interpret model names.  The bar charts compare model performance across different metrics and configurations (with/without feature selection and hyperparameter tuning).
 
 
 <a name="features"></a>
 ## Features
 - **Air Temperature Prediction:** Predicts next-day minimum air temperature using machine learning.
-- **Data Exploration and Visualization:**  Includes data loading, statistical analysis, and visualization of temperature trends, distribution, and correlations with geographical and environmental factors (elevation, slope, solar radiation).
-- **Data Preprocessing:** Handles missing values (mean/median imputation) and outliers (IQR and Z-score methods).  Creates new features from date information (year, month, season, daily temperature range).
-- **Feature Engineering:**  Derives additional features such as `Daily_Temp_Range` and date-based features.
-- **Feature Selection:**  Experiments with different feature selection methods (Sequential Feature Selection - forward and backward, SelectKBest) to optimize model performance.
-- **Model Training and Evaluation:** Trains and evaluates multiple regression models (Random Forest, Linear Regression, LightGBM).  Uses metrics like RMSE, MAE, and R-squared for model evaluation.  Includes hyperparameter tuning using GridSearchCV.
-- **Learning Curve Analysis:**  Plots learning curves to assess model bias and variance.
-- **Model Comparison:** Compares the performance of different models with and without feature selection and hyperparameter tuning, visualizing results using bar charts.
+- **Data Exploration and Visualization:**  Loads, cleans, and visualizes air temperature data, including exploratory data analysis (EDA) and visualizations of temperature distributions, trends, and correlations with geographical and environmental factors.
+- **Data Preprocessing:** Handles missing values (mean/median imputation) and outliers (IQR and Z-score methods) in the dataset.
+- **Feature Engineering:** Creates new features from existing data (e.g., year, month, season, daily temperature range).
+- **Feature Selection:** Employs different feature selection methods (Sequential Feature Selection (SFS), Sequential Backward Selection (SBS), SelectKBest) to identify the most relevant features for prediction.
+- **Model Training and Evaluation:** Trains and evaluates multiple regression models (Random Forest, Linear Regression, LightGBM) using metrics such as RMSE, MAE, and R².  Includes hyperparameter tuning using GridSearchCV and learning curves to assess model performance.
+- **Model Comparison:** Compares the performance of different models with and without feature selection and hyperparameter tuning using bar charts.
 
 
